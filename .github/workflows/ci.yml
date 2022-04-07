@@ -18,4 +18,6 @@ jobs:
       - uses: tsuyoshicho/action-mypy@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-check
+          reporter: github-pr-review
+          level: warning
+          fail_on_error: true
