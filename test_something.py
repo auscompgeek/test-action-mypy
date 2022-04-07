@@ -1,5 +1,16 @@
-import pytest
+from typing import overload
 
 
-def test_approx():
-    assert 0 == pytest.approx(0)
+class Error:
+    pass
+
+
+class Superclass:
+    def error_log(self) -> Error:
+        pass
+
+
+class Subclass(Superclass):
+    @overload
+    def error_log(self) -> int:
+        pass
